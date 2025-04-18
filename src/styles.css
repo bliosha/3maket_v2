@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: swap;
+    src: url("/src/assets/Fonts/Raleway/Raleway-VariableFont_wght.ttf") format("ttf");
+}
