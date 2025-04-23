@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import logo from "../assets/logo.svg";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -16,8 +17,8 @@ const Header = () => {
                         <img src={logo} alt="logo" className="max-w-15 md:max-w-20" />
                     </div>
                     <div className="title  text-gray-600">
-                        <h2 className="text-[14px] font-bold sm:text-[18px] md:text-[22px]">Назва компанії:</h2>
-                        <p className="text-[10px] font-normal font-roboto sm:text-[14px] md:text-[18px]">сама класна компанія</p>
+                        <h2 className="text-[14px] font-bold sm:text-[18px] md:text-[22px] font-ptsans">Назва компанії:</h2>
+                        <p className="text-[10px] font-normal font-ptsans sm:text-[14px] md:text-[18px]">сама класна компанія</p>
                     </div>
                 </div>
                 <div className="contactCompany pr-2.5 pl-2.5 text-gray-600 sm:pr-5">
@@ -27,7 +28,7 @@ const Header = () => {
                     <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin ">
                         +38(099)890-56-78
                     </div>
-                    <div className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500">
+                    <div className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500 font-ptsans">
                         Зворотній зв'язок
                     </div>
                 </div>
@@ -76,16 +77,16 @@ const Header = () => {
                 </label>
 
                 <div className={`menu-item ${isMenuVisible ? 'flex' : 'hidden'} p-15  flex flex-col bg-gray-500 fixed h-full w-full top-0 bottom-0 left-0 right-0 z-50 overflow-y-auto text-white text-[30px] sm:text-[40px] md:text-[20px] md:flex md:w-full md:p-3 md:relative lg:pr-15 lg:pl-15 2xl:pr-20 xl:pl-20 2xl:text-2xl`}>
-                    <ul className="flex-col md:flex md:flex-row justify-between shrink-0 gap-[3vw] items-center ">
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><a>Головна</a></li>
+                    <ul className="flex-col md:flex md:flex-row justify-between shrink-0 gap-[3vw] items-center font-ptsans">
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/">Головна</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><a>Каталог</a></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/Catalog">Каталог</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><a>Доставка і оплата</a></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Payments">Доставка і оплата</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><a>Ціни</a></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Price">Ціни</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><a>Контакти</a></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Contacts">Контакти</Link></li>
                     </ul>
                 </div>
             </div>
