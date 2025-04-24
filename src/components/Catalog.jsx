@@ -2,6 +2,7 @@ import React from 'react';
 import pricelist from "../assets/img/logo_price-list.jpg";
 import Chaynik from "../assets/img/nophoto.jpg";
 import Cart from "../assets/img/icon_buy.svg";
+import {Link} from "react-router-dom";
 
 const Catalog = () => {
     const products = Array(5).fill({
@@ -15,9 +16,9 @@ const Catalog = () => {
             {/* Breadcrumbs */}
             <nav className="text-sm mb-4 text-gray-500 max-w-[980px] px-[10px] mx-auto">
                 <ol className="list-reset flex">
-                    <li><a href="/" className="hover:text-blue-600 underline">Головна</a></li>
+                    <li><Link to="/" className="hover:text-blue-600 underline">Головна</Link></li>
                     <li><span className="mx-2">/</span></li>
-                    <li><a href="#" className="hover:text-blue-600 underline">Каталог</a></li>
+                    <li><Link to="/Catalog" className="hover:text-blue-600 underline">Каталог</Link></li>
                     <li><span className="mx-2">/</span></li>
                     <li className="text-gray-500 ">Побутова техніка</li>
                 </ol>
@@ -68,11 +69,32 @@ const Catalog = () => {
                     </div>
 
                     {/* Пагінація */}
-                    <div className="mt-8 flex justify-center text-sm text-gray-600 space-x-2">
+                    <div className=" mt-8 flex justify-center text-sm text-gray-600 space-x-2">
                         {[1, 2, 3, 4, 5, 6, 7].map(num => (
-                            <button key={num} className="hover:underline hover:font-bold">{num}</button>
+                            <button key={num} className="cursor-pointer hover:underline hover:font-bold">{num}</button>
                         ))}
                     </div>
+
+                    {/* Інформація про компанію */}
+                    <div className="max-w-[980px] mx-auto mt-10 border-t border-gray-300 pt-6 px-4 text-gray-500 text-sm leading-relaxed font-ptsans flex flex-col md:flex-row gap-8 mb-30">
+                        <div className="md:w-1/2">
+                            <p>
+                                Компанія «Піксель Плюс» існує більше 6 років, за цей час ми приймали участь у розробці більше ніж 700 сайтів, тому можете впевнено називати себе професіоналами. На даний момент наш колектив складається з більше ніж 30 співробітників, які працюють у двох офісах у Москві та Зеленограді.
+                            </p>
+                            <p className="mt-4">
+                                Характерне для цього жанру мистецтво: нерозділене кохання, втрата молодості, згасання душі.
+                            </p>
+                        </div>
+                        <div className="md:w-1/2">
+                            <p>
+                                Одним із основних напрямків роботи нашої компанії є пошукове просування сайтів. На даний момент ми працюємо з більш ніж 150 постійними клієнтами на понад 11 000 пошукових запитів.
+                            </p>
+                            <p className="mt-4">
+                                При цьому основний акцент ми робимо на якість роботи, а також використовуємо власні унікальні розробки у сфері SEO. Наразі відділ SEO складається з 9 осіб під керівництвом провідного спеціаліста, які переважно працюють у нашому московському офісі.
+                            </p>
+                        </div>
+                    </div>
+
                 </section>
             </div>
         </div>

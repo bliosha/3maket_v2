@@ -11,6 +11,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Carousel from "./components/Carousel.jsx";
 import Catalog from "./components/Catalog.jsx";
+import Footer from "./components/Footer.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 
 
@@ -38,8 +40,9 @@ const App = () => {
                     </div>} />
                 <Route path="/Catalog" element={<Catalog />} />
 
-                <Route path="*" element={<div>404</div>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
+            <Footer />
         </main>
     )
 }

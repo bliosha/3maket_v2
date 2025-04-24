@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const handleBurgerChange = () => {
         setIsMenuVisible(!isMenuVisible);
     };
@@ -28,11 +28,58 @@ const Header = () => {
                     <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin ">
                         +38(099)890-56-78
                     </div>
-                    <div className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500 font-ptsans">
+                    <div
+                        className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500 font-ptsans cursor-pointer"
+                        onClick={() => setIsModalOpen(true)}
+                    >
                         Зворотній зв'язок
                     </div>
                 </div>
             </div>
+
+            {/*Зворотній зв'язок*/}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-52 flex items-center justify-center bg-[rgba(0,0,0,0.6)] transition-opacity duration-300">
+                    <div className="bg-white pt-10 px-6 pb-6 w-[90%] max-w-md shadow-lg relative rounded-none">
+                        {/* Кнопка закриття */}
+                        <button
+                            className="absolute -top-7 -right-7 bg-gray-500 w-7 h-7 flex items-center justify-center text-white hover:text-red-500 text-4xl font-thin leading-none shadow-md"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            &times;
+                        </button>
+
+                        {/* Заголовок */}
+                        <h2 className="text-center text-lg font-bold mb-6 tracking-wide text-gray-700">ЗВОРОТНІЙ ЗВ'ЯЗОК</h2>
+
+                        {/* Форма */}
+                        <form className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-1">
+                                <label className="text-sm text-gray-700 text-center">Ваше ім'я</label>
+                                <input className="border border-gray-500 px-2 py-2 rounded-none" type="text" />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="text-sm text-gray-700 text-center">Телефон</label>
+                                <input className="border border-gray-500 px-2 py-2 rounded-none" type="tel" />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="text-sm text-gray-700 text-center">Email</label>
+                                <input className="border border-gray-500 px-2 py-2 rounded-none" type="email" />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="text-sm text-gray-700 text-center">Повідомлення</label>
+                                <textarea className="border border-gray-500  px-2 py-2 resize-none rounded-none" rows={4} />
+                            </div>
+                            <button
+                                type="submit"
+                                className="bg-gray-500 text-white py-1.5 px-6 text-sm self-center hover:bg-gray-900"
+                            >
+                                ВІДПРАВИТИ
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
 
             <div className="menu pt-3 pb-3  w-full">
                 <label className="pt-4.5 absolute right-2 z-51 bg-gray-600  pb-4.5 pl-1.5 pr-1.5 rounded-lg md:hidden">
