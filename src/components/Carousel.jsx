@@ -1,6 +1,6 @@
 import {useState} from "react";
-import left from '/src/assets/left.jpg'
-import right from '/src/assets/right.jpg'
+import left from '/src/assets/img/left.jpg'
+import right from '/src/assets/img/right.jpg'
 
 
 const Carousel = ({children:slides}) => {

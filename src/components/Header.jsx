@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from "../assets/logo.svg";
+import logo from "../assets/img/logo.png";
 import {Link} from "react-router-dom";
 
 const Header = () => {
@@ -10,33 +10,38 @@ const Header = () => {
     };
 
     return (
-        <nav className="header relative top-5 w-full">
-            <div className="container flex justify-between pb-5 m-auto">
-                <div className="nameCompany flex pr-2.5 pt-5">
-                    <div className="logo pr-1.75 pl-2.5">
-                        <img src={logo} alt="logo" className="max-w-15 md:max-w-20" />
+        <nav className="header relative top-5 w-full bg-white">
+            <div className="w-full px-[10px]">
+                <div className="max-w-[980px] mx-auto flex justify-between pb-5">
+                    <div className="nameCompany flex pr-2.5 pt-5">
+                        <div className="logo pr-1.75 pl-2.5">
+                            <img src={logo} alt="logo" className="max-w-20 h-20" />
+                        </div>
+                        <div className="title text-gray-600">
+                            <h2 className="text-[14px] font-bold sm:text-[18px] md:text-[22px] font-ptsans">
+                                Назва компанії:
+                            </h2>
+                            <p className="text-[10px] font-normal font-ptsans sm:text-[14px] md:text-[18px]">
+                                сама класна компанія
+                            </p>
+                        </div>
                     </div>
-                    <div className="title  text-gray-600">
-                        <h2 className="text-[14px] font-bold sm:text-[18px] md:text-[22px] font-ptsans">Назва компанії:</h2>
-                        <p className="text-[10px] font-normal font-ptsans sm:text-[14px] md:text-[18px]">сама класна компанія</p>
-                    </div>
-                </div>
-                <div className="contactCompany pr-2.5 pl-2.5 text-gray-600 sm:pr-5">
-                    <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin ">
-                        +38(099)890-56-78
-                    </div>
-                    <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin ">
-                        +38(099)890-56-78
-                    </div>
-                    <div
-                        className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500 font-ptsans cursor-pointer"
-                        onClick={() => setIsModalOpen(true)}
-                    >
-                        Зворотній зв'язок
+                    <div className="contactCompany pr-2.5 pl-2.5 text-gray-600 sm:pr-5">
+                        <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin">
+                            +38(099)890-56-78
+                        </div>
+                        <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin">
+                            +38(099)890-56-78
+                        </div>
+                        <div
+                            className="callback text-[10px] sm:text-[12px] md:text-[20px] font-bold underline decoration-dashed decoration-2 hover:text-blue-500 font-ptsans cursor-pointer"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Зворотній зв'язок
+                        </div>
                     </div>
                 </div>
             </div>
-
             {/*Зворотній зв'язок*/}
             {isModalOpen && (
                 <div className="fixed inset-0 z-52 flex items-center justify-center bg-[rgba(0,0,0,0.6)] transition-opacity duration-300">
@@ -123,8 +128,8 @@ const Header = () => {
                     peer-checked:after:-rotate-45"></span>
                 </label>
 
-                <div className={`menu-item ${isMenuVisible ? 'flex' : 'hidden'} p-15  flex flex-col bg-gray-500 fixed h-full w-full top-0 bottom-0 left-0 right-0 z-50 overflow-y-auto text-white text-[30px] sm:text-[40px] md:text-[20px] md:flex md:w-full md:p-3 md:relative lg:pr-15 lg:pl-15 2xl:pr-20 xl:pl-20 2xl:text-2xl`}>
-                    <ul className="flex-col md:flex md:flex-row justify-between shrink-0 gap-[3vw] items-center font-ptsans">
+                <div className={`menu-item ${isMenuVisible ? 'flex' : 'hidden'} px-[10px] items-center justify-center p-15  flex flex-col bg-gray-500 fixed h-full w-full top-0 bottom-0 left-0 right-0 z-50 overflow-y-auto text-white text-[30px] sm:text-[40px] md:text-[20px] md:flex md:w-full md:p-3 md:relative lg:pr-15 lg:pl-15 2xl:pr-20 xl:pl-20 2xl:text-2xl`}>
+                    <ul className="max-w-[980px] flex-col md:flex md:flex-row justify-between shrink-0 gap-[1vw] items-center font-ptsans m-2">
                         <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/">Головна</Link></li>
                         <li className="hidden md:block">|</li>
                         <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/Catalog">Каталог</Link></li>
