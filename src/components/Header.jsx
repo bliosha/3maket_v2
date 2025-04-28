@@ -130,15 +130,15 @@ const Header = () => {
 
                 <div className={`menu-item ${isMenuVisible ? 'flex' : 'hidden'} px-[10px] items-center justify-center p-15  flex flex-col bg-gray-500 fixed h-full w-full top-0 bottom-0 left-0 right-0 z-50 overflow-y-auto text-white text-[30px] sm:text-[40px] md:text-[20px] md:flex md:w-full md:p-3 md:relative lg:pr-15 lg:pl-15 2xl:pr-20 xl:pl-20 2xl:text-2xl`}>
                     <ul className="max-w-[980px] flex-col md:flex md:flex-row justify-between shrink-0 gap-[1vw] items-center font-ptsans m-2">
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/">Головна</Link></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link onClick={handleBurgerChange} to="/">Головна</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="/Catalog">Каталог</Link></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link onClick={handleBurgerChange} to="/Catalog">Каталог</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Payments">Доставка і оплата</Link></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link onClick={handleBurgerChange} to="Payments">Доставка і оплата</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Price">Ціни</Link></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link onClick={handleBurgerChange} to="Price">Ціни</Link></li>
                         <li className="hidden md:block">|</li>
-                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link to="Contacts">Контакти</Link></li>
+                        <li className="cursor-pointer hover:text-blue-500 hover:underline"><Link onClick={handleBurgerChange} to="Contacts">Контакти</Link></li>
                     </ul>
                 </div>
             </div>
