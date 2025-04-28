@@ -14,8 +14,8 @@ const Header = () => {
             <div className="w-full px-[10px]">
                 <div className="max-w-[980px] mx-auto flex justify-between pb-5">
                     <div className="nameCompany flex pr-2.5 pt-5">
-                        <div className="logo pr-1.75 pl-2.5">
-                            <img src={logo} alt="logo" className="max-w-20 h-20" />
+                        <div className="logo pr-1.75 pl-5">
+                            <img src={logo} alt="logo" className="max-w-10 h-10  md:max-w-20 md:h-20" />
                         </div>
                         <div className="title text-gray-600">
                             <h2 className="text-[14px] font-bold sm:text-[18px] md:text-[22px] font-ptsans">
@@ -26,7 +26,7 @@ const Header = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="contactCompany pr-2.5 pl-2.5 text-gray-600 sm:pr-5">
+                    <div className="contactCompany pr-5 pl-2.5 text-gray-600">
                         <div className="contact text-[14px] sm:text-[20px] md:text-[30px] hover:text-blue-500 font-urbanist font-thin">
                             +38(099)890-56-78
                         </div>
@@ -87,7 +87,7 @@ const Header = () => {
             )}
 
             <div className="menu pt-3 pb-3  w-full">
-                <label className="pt-4.5 absolute right-2 z-51 bg-gray-600  pb-4.5 pl-1.5 pr-1.5 rounded-lg md:hidden">
+                <label className="pt-4.5 absolute right-5 z-51 bg-gray-600  pb-4.5 pl-1.5 pr-1.5 rounded-lg md:hidden">
                     <input
                         name="burgerCheck"
                         type="checkbox"
