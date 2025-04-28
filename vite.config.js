@@ -7,8 +7,6 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  // Для правильних відносних шляхів у продакшн-режимі
+  base: './', // Це забезпечить коректні шляхи до файлів
 })
-// https://vite.dev/config/
-
-
-
